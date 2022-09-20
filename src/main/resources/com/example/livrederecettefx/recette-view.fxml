@@ -11,7 +11,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView prefHeight="254.0" prefWidth="286.0" />
+                  <ListView prefHeight="254.0" prefWidth="286.0" fx:id="recetteListView" />
                </children>
             </AnchorPane>
         </content>

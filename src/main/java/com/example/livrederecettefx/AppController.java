@@ -1,6 +1,7 @@
 package com.example.livrederecettefx;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,21 +21,18 @@ public class AppController implements Initializable {
     private URL location;
 
     @FXML
-    private ListView<Integer> recetteListView;
+    private ListView<String> recetteListView;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Livre livreDeRecette = new Livre();
         livreDeRecette.major();
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(3);
-        arrayList.add(4);
-        arrayList.add(5);
-        arrayList.add(6);
-        arrayList.add(7);
-        arrayList.add(8);
+        ArrayList<String> listNomRecette = new ArrayList<>();
+        for (int i = 0; i < livreDeRecette.getRecetteLinkedList().size(); i++){
+            listNomRecette.add(livreDeRecette.getRecetteLinkedList().get(i).getNomRecette());
+        }
 
-        recetteListView.setItems((ObservableList<Integer>) arrayList);
-
+        ObservableList<String> recetteObservableList = FXCollections.observableList(listNomRecette); //donner liste des noms de recette
+        recetteListView.setItems(recetteObservableList); //donner ObservableList des noms de recette
     }
 }
