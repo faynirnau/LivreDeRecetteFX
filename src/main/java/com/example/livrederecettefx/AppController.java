@@ -28,8 +28,7 @@ public class AppController implements Initializable {
         for (int i = 0; i < livreDeRecette.getRecetteLinkedList().size(); i++){
             listNomRecette.add(livreDeRecette.getRecetteLinkedList().get(i).getNomRecette());
         }
-
-        ObservableList<String> recetteObservableList = FXCollections.observableList(listNomRecette); //donner liste des noms de recette
-        recetteListView.setItems(recetteObservableList); //donner ObservableList des noms de recette
+        ObservableList<String> recetteObservableList = FXCollections.observableList(listNomRecette); //donner liste des noms de recette.
+        recetteListView.setItems(recetteObservableList); //donner ObservableList des noms de recette.
     }
 }
