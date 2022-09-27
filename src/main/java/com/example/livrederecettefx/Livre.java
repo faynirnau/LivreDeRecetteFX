@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class Livre {
     private LinkedList<Recette> recetteLinkedList = new LinkedList<>();
@@ -15,7 +14,6 @@ public class Livre {
     }
 
     public void major(){
-        Scanner scanner = new Scanner(System.in);
 
         ArrayList<Aliment> aliments;
         aliments = creerIngredientPateCarbonara();
@@ -26,23 +24,23 @@ public class Livre {
 
         Recette pateCarbonara = new Recette("Pâte à la carbonara", aliments, etapes,20);
         recetteLinkedList.add(pateCarbonara);
-//        pateCarbonara.afficherRecette();
         aliments.clear();
         etapes.clear();
         Recette roseDesSables = new Recette("Rose des sables", aliments, etapes, 10);
         recetteLinkedList.add(roseDesSables);
     }
+
     /*
     Initialisation pâte à la carbonara.
     */
     private static ArrayList<Aliment> creerIngredientPateCarbonara(){
-        Aliment pate = new Aliment("pate", 83.5,'g');
-        Aliment parmesan = new Aliment("parmesan", 10,'g');
-        Aliment oeuf = new Aliment("oeuf",1,'u');
-        Aliment lardon = new Aliment("lardon",41.5,'g');
-        Aliment oignon = new Aliment("oignon",1,'g');
-        Aliment sel = new Aliment("sel",0.02,'g');
-        Aliment poivre = new Aliment("poivre",0.02,'g');
+        Aliment pate = new Aliment("Pâte", 83.5,'g');
+        Aliment parmesan = new Aliment("Parmesan", 10,'g');
+        Aliment oeuf = new Aliment("Oeuf",1,'u');
+        Aliment lardon = new Aliment("Lardon",41.5,'g');
+        Aliment oignon = new Aliment("Oignon",1,'g');
+        Aliment sel = new Aliment("Sel",0.02,'g');
+        Aliment poivre = new Aliment("Poivre",0.02,'g');
         ArrayList<Aliment> listIngredient = new ArrayList<>();
         listIngredient.add(pate);
         listIngredient.add(parmesan);

@@ -1,9 +1,9 @@
 package com.example.livrederecettefx;
 
 public class Aliment {
-    private final String nom;
-    private final double quantite;
-    private final char unit;
+    private String nom;
+    private double quantite;
+    private char unit;
 
     public Aliment(String nom, double quantite, char unit) {
         this.nom = nom;

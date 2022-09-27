@@ -7,11 +7,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AppLivreDeRecette extends Application {
+    static AppController controller;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppLivreDeRecette.class.getResource("recette-view.fxml"));
+        controller = fxmlLoader.getController();
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Livre de recette");
         stage.setScene(scene);
         stage.show();
     }
