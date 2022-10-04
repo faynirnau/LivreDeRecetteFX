@@ -1,18 +1,35 @@
 package com.example.livrederecettefx;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Recette {
-    private final String nomRecette;
-    private final ArrayList<Aliment> aliments;
-    private final HashMap<Integer,String> etapes;
-    private final int temps;
+public class Recette implements Serializable {
+    private String nomRecette;
+    private ArrayList<Aliment> aliments;
+    private HashMap<Integer,String> etapes;
+    private int temps;
 
     public Recette(String nomRecette, ArrayList<Aliment> aliments, HashMap<Integer,String> etapes, int temps) {
+        this.setNomRecette(nomRecette);
+        this.setAliments((ArrayList<Aliment>) aliments.clone()); ;
+        this.setEtapes((HashMap<Integer, String>) etapes.clone());
+        this.setTemps(temps);
+    }
+
+    public void setAliments(ArrayList<Aliment> aliments) {
+        this.aliments = aliments;
+    }
+
+    public void setNomRecette(String nomRecette) {
         this.nomRecette = nomRecette;
-        this.aliments = (ArrayList<Aliment>) aliments.clone();
-        this.etapes = (HashMap<Integer, String>) etapes.clone();
+    }
+
+    public void setEtapes(HashMap<Integer, String> etapes) {
+        this.etapes = etapes;
+    }
+
+    public void setTemps(int temps) {
         this.temps = temps;
     }
 
@@ -48,9 +65,6 @@ public class Recette {
             System.out.println(this.getEtapes().get(i));
             System.out.println(" ");
         }
-    }
-    public void afficherRecetteFX(){
-
     }
 
 }

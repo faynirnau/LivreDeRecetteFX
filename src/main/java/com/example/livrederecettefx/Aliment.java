@@ -1,6 +1,8 @@
 package com.example.livrederecettefx;
 
-public class Aliment {
+import java.io.Serializable;
+
+public class Aliment implements Serializable {
     private String nom;
     private double quantite;
     private char unit;
@@ -22,6 +24,7 @@ public class Aliment {
     public char getUnit() {
         return unit;
     }
+
     public void afficheAliment(){
         System.out.println(
                 this.getNom() +
