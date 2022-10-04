@@ -131,7 +131,7 @@ public class AppLivreDeRecette extends Application {
 
     public static LinkedList<Recette> charger(String nomFichier) {
         ObjectInputStream ois = null;
-        LinkedList<Recette> recettes = null;
+        LinkedList<Recette> recettes;
         try {
             final FileInputStream fichier = new FileInputStream(nomFichier);
             ois = new ObjectInputStream(fichier);
