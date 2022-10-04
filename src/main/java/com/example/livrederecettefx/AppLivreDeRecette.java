@@ -13,20 +13,16 @@ import java.util.LinkedList;
 public class AppLivreDeRecette extends Application {
     private static LinkedList<Recette> recetteLinkedList;
 
-    private static FXMLLoader fxmlLoader;
-    private static FXMLLoader fxmlLoaderAjouteRecette;
-    private static Scene mainScene;
-    private static Scene sceneAjoutRecette;
+
     public static LinkedList<Recette> getRecetteLinkedList() {
         return recetteLinkedList;
     }
 
+
     @Override
     public void start(Stage stage) throws IOException {
-        fxmlLoader = new FXMLLoader(AppLivreDeRecette.class.getResource("recette-view.fxml"));
-        mainScene = new Scene(fxmlLoader.load());
-        fxmlLoaderAjouteRecette = new FXMLLoader(AppLivreDeRecette.class.getResource("recetteAjouterRecette.fxml"));
-        sceneAjoutRecette = new Scene(fxmlLoaderAjouteRecette.load());
+        FXMLLoader fxmlLoader = new FXMLLoader(AppLivreDeRecette.class.getResource("recette-view.fxml"));
+        Scene mainScene = new Scene(fxmlLoader.load());
         stage.setTitle("Livre de recette");
         stage.setScene(mainScene);
         stage.show();
