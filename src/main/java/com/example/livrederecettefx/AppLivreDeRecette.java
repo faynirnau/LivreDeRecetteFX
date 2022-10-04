@@ -32,14 +32,8 @@ public class AppLivreDeRecette extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        try{
-            recetteLinkedList = charger("livre.dat");
-        }catch (NullPointerException e){
-            e.getMessage();
-            major();
-            sauvegarde(recetteLinkedList);
-        }
+    public static void main(String[] args){
+        recetteLinkedList = charger("livre.dat");
         launch();
     }
 
@@ -143,7 +137,9 @@ public class AppLivreDeRecette extends Application {
             ois = new ObjectInputStream(fichier);
             recettes = (LinkedList<Recette>) ois.readObject();
         } catch (final Exception e) {
-            e.printStackTrace();
+            major();
+            sauvegarde(recetteLinkedList);
+            recettes = recetteLinkedList;
         } finally {
             try {
                 if (ois != null) {

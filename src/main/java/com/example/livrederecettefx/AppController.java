@@ -39,7 +39,7 @@ public class AppController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (Recette i:recettes) {
-            this.recetteListView.getItems().add(i.getNomRecette());
+            recetteListView.getItems().add(i.getNomRecette());
         }
     }
     @FXML
