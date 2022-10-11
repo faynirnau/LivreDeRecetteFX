@@ -47,14 +47,14 @@ public class AppController implements Initializable {
         }
     }
     @FXML
-    void ajouterIngredient(ActionEvent event) {
-    }
+    void ajouterIngredient(ActionEvent event) {}
 
     @FXML
     void ajouterRecette(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoaderAjouterRecette = new FXMLLoader(AppLivreDeRecette.class.getResource("recetteAjouterRecette.fxml"));
         Scene sceneAjouterRecette = new Scene(fxmlLoaderAjouterRecette.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Ajouter une recettes !!");
         stage.setScene(sceneAjouterRecette);
         stage.show();
     }

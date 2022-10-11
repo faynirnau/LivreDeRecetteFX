@@ -12,7 +12,7 @@ public class Recette implements Serializable {
 
     public Recette(String nomRecette, ArrayList<Aliment> aliments, HashMap<Integer,String> etapes, int temps) {
         this.setNomRecette(nomRecette);
-        this.setAliments((ArrayList<Aliment>) aliments.clone()); ;
+        this.setAliments((ArrayList<Aliment>) aliments.clone());
         this.setEtapes((HashMap<Integer, String>) etapes.clone());
         this.setTemps(temps);
     }

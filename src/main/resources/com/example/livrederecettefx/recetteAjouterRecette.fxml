@@ -9,7 +9,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.livrederecettefx.ControllerAjouterRecette">
    <children>
-      <Button layoutX="369.0" layoutY="502.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="valider" layoutX="367.0" layoutY="496.0" mnemonicParsing="false" onAction="#valider" text="Valider">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <Text layoutX="264.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Création d'une recette" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="25.0" />
@@ -28,10 +31,22 @@
       </Text>
       <TextField fx:id="tempsRecetteFX" layoutX="321.0" layoutY="113.0" />
       <ListView fx:id="ingredients" layoutX="598.0" layoutY="79.0" prefHeight="461.0" prefWidth="172.0" />
-      <Text layoutX="652.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrédient">
+      <Text layoutX="652.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrédients">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
+      <Text layoutX="95.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrédient" />
+      <Text layoutX="259.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité" />
+      <TextField fx:id="nomIngredientFX" layoutX="48.0" layoutY="269.0" />
+      <TextField fx:id="quantiteFX" layoutX="208.0" layoutY="269.0" />
+      <Button fx:id="ajouterIngredient" layoutX="467.0" layoutY="269.0" mnemonicParsing="false" onAction="#AjouterIngredient" text="Ajouter l'ingrédient" />
+      <Button fx:id="annuler" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#annuler" text="Annuler">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="uniteFX" layoutX="376.0" layoutY="269.0" prefHeight="25.0" prefWidth="39.0" />
+      <Text layoutX="381.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unité" />
    </children>
 </Pane>
