@@ -109,7 +109,6 @@ public class AppLivreDeRecette extends Application {
             final FileOutputStream fichier = new FileOutputStream("livre.dat");
             oos = new ObjectOutputStream(fichier);
             oos.writeObject(objet);
-            System.out.println("Saved !!");
             oos.flush();
         }
         catch (final java.io.IOException e) {
@@ -132,7 +131,6 @@ public class AppLivreDeRecette extends Application {
         try (FileInputStream fichier = new FileInputStream(nomFichier)){
             ois = new ObjectInputStream(fichier);
             recettes = (LinkedList<Recette>) ois.readObject();
-            System.out.println("load !!!");
         } catch (final Exception e) {
             major();
             sauvegarde(recetteLinkedList);
