@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,6 +18,7 @@ import java.util.HashMap;
 public class ControllerAjouterRecette {
 
     private ArrayList<Aliment> aliments = new ArrayList<>();
+    private HashMap<Integer,String> etapes = new HashMap<Integer, String>();
 
     @FXML
     private Button annuler;
@@ -24,6 +26,8 @@ public class ControllerAjouterRecette {
     private Button valider;
     @FXML
     private Button ajouterIngredient;
+    @FXML
+    private Button creerEtape;
 
     @FXML
     private ListView<String> ingredients;
@@ -42,6 +46,8 @@ public class ControllerAjouterRecette {
 
     @FXML
     private TextField uniteFX;
+    @FXML
+    private TextArea etapeFX;
 
     @FXML
     void annuler(ActionEvent event) throws IOException {
@@ -54,7 +60,6 @@ public class ControllerAjouterRecette {
     }
     @FXML
     void valider(ActionEvent event) throws IOException {
-        HashMap<Integer,String> etapes = new HashMap<Integer, String>();
         int temps = Integer.parseInt(tempsRecetteFX.getText());
         String nomRecette = nomRecetteFX.getText();
         Recette recette = new Recette(nomRecette,aliments,etapes,temps);
@@ -64,7 +69,7 @@ public class ControllerAjouterRecette {
     }
     @FXML
     void AjouterIngredient(ActionEvent event) {
-        Aliment aliment = new Aliment(nomIngredientFX.getText(), Integer.parseInt(quantiteFX.getText()), uniteFX.getCharacters().charAt(0));
+        Aliment aliment = new Aliment(nomIngredientFX.getText(), Double.parseDouble(quantiteFX.getText()), uniteFX.getCharacters().charAt(0));
         aliments.add(aliment);
         String chaine = aliment.getNom() +' '+ aliment.getQuantite() + aliment.getUnit();
         ingredients.getItems().add(chaine);
@@ -72,5 +77,10 @@ public class ControllerAjouterRecette {
         quantiteFX.clear();
         uniteFX.clear();
     }
-
+    @FXML
+    void ajouterEtape(ActionEvent event) {
+        etapes.put(etapes.size()+1,etapeFX.getText());
+        System.out.println("add"+etapeFX.getText());
+        etapeFX.clear();
+    }
 }

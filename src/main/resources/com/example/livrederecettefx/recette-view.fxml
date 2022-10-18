@@ -41,10 +41,11 @@
             <Font size="31.0" />
          </font>
       </Text>
-      <TextArea fx:id="etapes" editable="false" layoutX="322.0" layoutY="57.0" prefHeight="462.0" prefWidth="563.0" wrapText="true">
+      <TextArea fx:id="etapes" editable="false" layoutX="322.0" layoutY="57.0" prefHeight="444.0" prefWidth="563.0" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </TextArea>
+      <Button fx:id="supprimer" layoutX="310.0" layoutY="538.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="33.0" prefWidth="118.0" text="supprimer" />
    </children>
 </Pane>

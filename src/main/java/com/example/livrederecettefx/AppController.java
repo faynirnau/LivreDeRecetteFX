@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -32,6 +33,8 @@ public class AppController implements Initializable {
     private URL location;
     @FXML
     private Button ajouterRecette;
+    @FXML
+    private Button supprimer;
     @FXML
     private Button ajouterIngredient;
 
@@ -77,12 +80,19 @@ public class AppController implements Initializable {
         Recette recette = recettes.get(index);
         String etape = "";
         for(int i = 1;i<recette.getEtapes().size();i++) {
-            etape = etape + "Etape : " + i + "\n";
+            etape = etape + "Etape " + i + " :\n";
             etape += recette.getEtapes().get(i);
             etape += "\n";
             etape += "\n";
         }
         etapes.setText(etape);
+    }
+    @FXML
+    void supprimer(ActionEvent event) {
+        int index = recetteListView.getSelectionModel().getSelectedIndex();
+        recetteListView.getItems().remove(index);
+        recettes.remove(index);
+        AppLivreDeRecette.sauvegarde(recettes);
     }
 
 }
