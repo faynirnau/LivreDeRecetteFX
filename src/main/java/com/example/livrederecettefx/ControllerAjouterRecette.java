@@ -80,7 +80,6 @@ public class ControllerAjouterRecette {
     @FXML
     void ajouterEtape(ActionEvent event) {
         etapes.put(etapes.size()+1,etapeFX.getText());
-        System.out.println("add"+etapeFX.getText());
         etapeFX.clear();
     }
 }
